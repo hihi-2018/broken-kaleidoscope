@@ -1,8 +1,38 @@
 import React from 'react'
-
+import Pixel from './Pixel'
 const App = () => {
   return (
-    <div>Yup.</div>
+    <div style={{width:'750px'}}>
+      
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+      <Pixel />
+    </div>
   )
 }
 
