@@ -34,7 +34,7 @@ import React from 'react'
 // and third way to create our function
 // const Pixel = function (props) {
 //   return (
-//     <div style={{
+//     <div style={{  // THIS IS AN OBJECT LITERAL.. we created it with {a:2, b:"fred"}
 //       fontFamily: 'Times New Roman',
 //       height: '80px',
 //       width: '80px',
@@ -44,6 +44,8 @@ import React from 'react'
 //     </div>
 //   )
 // }
+const randomHexColor = () =>
+  `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
 
 class Pixel extends React.Component {
   constructor(props) {
@@ -52,19 +54,36 @@ class Pixel extends React.Component {
     this.state = {
       style: {
         fontFamily: 'Times New Roman',
-        height: '50px',
-        width: '50px',
-        backgroundColor: 'cornflowerblue'
+        height: '60px',
+        width: '60px',
+        backgroundColor: randomHexColor()
       }
 
     }
   }
 
+  handleClick = (evt) => {
+    this.setState({
+      style: {
+        fontFamily: 'Times New Roman',
+        height: '60px',
+        width: '60px',
+        backgroundColor: randomHexColor()
+      }
+    })
+  }
+
+  // randomHexColor = () => {
+  //   `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+  // }
+
   // this.setState()
 
-  render(){
+  render() {
+    console.log(this.state.style)
     return (
-      <div style = {this.state.style}>
+
+      <div onClick={this.handleClick} style={this.state.style}>
       </div>
     )
   }
