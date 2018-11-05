@@ -19,6 +19,7 @@ class Pixel extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             style: {
                 height: '50px',
@@ -26,11 +27,20 @@ class Pixel extends React.Component {
                 background: 'blue'
             }
         }
+
+        this.changeToGreen = this.changeToGreen.bind(this)
+    }
+
+    changeToGreen(){
+        this.setState({style: {
+            height: '50px',
+            width: '50px',
+            background: 'green'
+        }})
     }
 
     render() {
-        
-        return <div style={this.state.style}></div>
+        return <div style={this.state.style} onClick={this.changeToGreen}></div>
     }
 }
 
