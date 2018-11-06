@@ -7,6 +7,8 @@ const App = () => {
   //{anArray.map(()=> {<Pixel/>})}
 
   let anArray = []
+  const randomHexColor = () =>
+  `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
 
   for(let i = 0; i< 400; i++){
     anArray.push(i);
@@ -15,7 +17,17 @@ const App = () => {
 
   return (
     <div>
-      {anArray.map(()=> (<Pixel/>) ) }
+
+      <Pixel color="red"/>
+      <Pixel color="blue"/>
+      <Pixel color="orange"/>
+      <Pixel color="red"/>
+      <Pixel color="red"/>
+      <Pixel color="blue"/>
+      <Pixel color="orange"/>
+      <Pixel color="red"/>
+
+      {anArray.map(()=> (<Pixel color={randomHexColor()}/>)  ) }
     </div>
   )
 }

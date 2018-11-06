@@ -24,7 +24,7 @@ class Pixel extends React.Component {
             style: {
                 height: '50px',
                 width: '50px',
-                background: 'blue'
+                background: props.color
             }
         }
 
@@ -33,8 +33,8 @@ class Pixel extends React.Component {
 
     changeToGreen(){
         this.setState({style: {
-            height: '50px',
-            width: '50px',
+            height: '100px',
+            width: '100px',
             background: 'green'
         }})
     }
