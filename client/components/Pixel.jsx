@@ -28,10 +28,32 @@ class Pixel extends React.Component {
             }
         }
 
-        this.changeToGreen = this.changeToGreen.bind(this)
+        // this.changeToWhite = this.changeToWhite.bind(this)  
+        // this.changeToYellow = this.changeToYellow.bind(this)
+        // this.changeToGreen = this.changeToGreen.bind(this)
     }
 
-    changeToGreen(){
+    changeToWhite = (event) => {
+        event.preventDefault()
+        this.setState({style: {
+            height: '50px',
+            width: '50px',
+            background: 'white'
+        }})
+    }
+   
+    changeToYellow = (event) =>{
+        event.preventDefault()
+        this.setState({style: {
+            height: '50px',
+            width: '50px',
+            background: 'yellow'
+        }})
+    }
+   
+   
+    changeToGreen = (event) =>{
+        event.preventDefault()
         this.setState({style: {
             height: '100px',
             width: '100px',
@@ -39,8 +61,19 @@ class Pixel extends React.Component {
         }})
     }
 
+    changeToRandom = evt =>{
+        this.setState({style:{
+            height: `${40+ Math.floor(Math.random()*40)}px` ,  //'50px',
+            width: `${40+ Math.floor(Math.random()*40)}px`  ,//'50px',
+            background: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+        }
+        })
+    }
+
+
+
     render() {
-        return <div style={this.state.style} onClick={this.changeToGreen}></div>
+        return <div style={this.state.style} onMouseEnter={this.changeToRandom} onContextMenu={this.changeToGreen} onDoubleClick={this.changeToWhite} onDragEnter={this.changeToYellow}></div>
     }
 }
 

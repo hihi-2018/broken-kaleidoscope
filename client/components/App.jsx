@@ -18,15 +18,6 @@ const App = () => {
   return (
     <div>
 
-      <Pixel color="red"/>
-      <Pixel color="blue"/>
-      <Pixel color="orange"/>
-      <Pixel color="red"/>
-      <Pixel color="red"/>
-      <Pixel color="blue"/>
-      <Pixel color="orange"/>
-      <Pixel color="red"/>
-
       {anArray.map(()=> (<Pixel color={randomHexColor()}/>)  ) }
     </div>
   )
