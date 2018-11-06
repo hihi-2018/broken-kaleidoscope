@@ -11,8 +11,8 @@ class Pixel extends React.Component {
     super(props)
     this.state = {
       style : { 
-        height: '100px',
-        width: '100px',
+        height: '10px',
+        width: '10px',
         opacity: '1',
         backgroundImage: '',
         backgroundColor: randomHexColor()
@@ -46,8 +46,8 @@ class Pixel extends React.Component {
     console.log('change dimenson pass over', evt)
 
     let changeDimensions = {...this.state.style}
-    changeDimensions.width = '200px'
-    changeDimensions.height = '200px'
+    changeDimensions.width = '20px'
+    changeDimensions.height = '20px'
 
     this.setState({
       style: changeDimensions
@@ -71,7 +71,7 @@ class Pixel extends React.Component {
   //   evt.preventDefault()
 
   //   let showImage = {...this.state.style}
-  //   showImage.backgroundImage = 'url("../trump.jpg")'
+  //   showImage.backgroundImage = 'url("./trump.jpg")'
 
   //   this.setState({
   //     style: showImage
@@ -84,7 +84,7 @@ class Pixel extends React.Component {
   render(){
     return(
       <div>
-      <div onDragEnter={this.dragEnter} onContextMenu={this.rightClick} onClick={this.clickHandler} onDoubleClick={this.doubleHandler} onMouseEnter={this.changeDimension} style={this.state.style}></div>
+      <div /* onDragEnter={this.dragEnter}  */ onContextMenu={this.rightClick} onClick={this.clickHandler} onDoubleClick={this.doubleHandler} onMouseEnter={this.changeDimension} style={this.state.style}></div>
       </div>
     )
   }
