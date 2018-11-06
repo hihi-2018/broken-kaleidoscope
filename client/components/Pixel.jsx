@@ -47,6 +47,9 @@ import React from 'react'
 const randomHexColor = () =>
   `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
 
+// var ourInterval
+
+
 class Pixel extends React.Component {
   constructor(props) {
     super(props)
@@ -54,24 +57,51 @@ class Pixel extends React.Component {
     this.state = {
       style: {
         fontFamily: 'Times New Roman',
-        height: '60px',
-        width: '60px',
+        height: '10px',
+        width: '10px',
         backgroundColor: randomHexColor()
       }
 
     }
+
+    // window.setInterval(this.setRandomColour, 1000)
+
   }
 
-  handleClick = (evt) => {
+  // setRandomColor = (evt) => {
+  //   this.setState({
+  //     style: {
+  //       fontFamily: 'Times New Roman',
+  //       height: '60px',
+  //       width: this.state.style.width,
+  //       backgroundColor: randomHexColor()
+  //     }
+  //   })
+  // }
+
+  setRandomColour = (e) => {
     this.setState({
       style: {
-        fontFamily: 'Times New Roman',
-        height: '60px',
-        width: '60px',
+        fontFamily: this.state.style.fontFamily,
+        height: this.state.style.height,
+        width: '10px',
         backgroundColor: randomHexColor()
       }
     })
   }
+
+  setColourYellow = (e) => {
+    this.setState ({
+      style: {
+        fontFamily: this.state.style.fontFamily,
+        height: '10px',
+        width: '10px',
+        backgroundColor: 'yellow'
+      }
+    })
+  }
+
+
 
   // randomHexColor = () => {
   //   `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
@@ -79,13 +109,23 @@ class Pixel extends React.Component {
 
   // this.setState()
 
+  
+
+  componentDidMount() {
+    // this.countdown = setInterval(this.timer, 1000);
+  //  ourInterval = setInterval(this.setRandomColour, 1000)
+  }
+
+
   render() {
-    console.log(this.state.style)
+    // console.log(this.state.style)
+    // let anInterval = window.setInterval(this.setRandomColour, 10000)
     return (
 
-      <div onClick={this.handleClick} style={this.state.style}>
+      <div id="ourDiv" onClick={this.setRandomColour} onMouseEnter={this.setColourYellow} onDragEnter={this.setRandomColour}  style={this.state.style}>
       </div>
     )
+
   }
 }
 
