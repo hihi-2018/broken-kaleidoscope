@@ -15,6 +15,10 @@ import React from 'react'
 // }
 
 
+const sizeAsNumber = 30
+const normalSize = `${sizeAsNumber}px`
+
+
 class Pixel extends React.Component {
 
     constructor(props) {
@@ -22,8 +26,8 @@ class Pixel extends React.Component {
 
         this.state = {
             style: {
-                height: '50px',
-                width: '50px',
+                height: normalSize,
+                width: normalSize,
                 background: props.color
             }
         }
@@ -36,8 +40,8 @@ class Pixel extends React.Component {
     changeToWhite = (event) => {
         event.preventDefault()
         this.setState({style: {
-            height: '50px',
-            width: '50px',
+            height: normalSize,
+            width: normalSize,
             background: 'white'
         }})
     }
@@ -45,8 +49,8 @@ class Pixel extends React.Component {
     changeToYellow = (event) =>{
         event.preventDefault()
         this.setState({style: {
-            height: '50px',
-            width: '50px',
+            height: normalSize,
+            width: normalSize,
             background: 'yellow'
         }})
     }
@@ -55,16 +59,16 @@ class Pixel extends React.Component {
     changeToGreen = (event) =>{
         event.preventDefault()
         this.setState({style: {
-            height: '100px',
-            width: '100px',
+            height: normalSize,
+            width: normalSize,
             background: 'green'
         }})
     }
 
     changeToRandom = evt =>{
         this.setState({style:{
-            height: `${40+ Math.floor(Math.random()*40)}px` ,  //'50px',
-            width: `${40+ Math.floor(Math.random()*40)}px`  ,//'50px',
+            height: `${sizeAsNumber+ Math.round(Math.random()*sizeAsNumber)}px` ,  //'50px',
+            width: `${sizeAsNumber+ Math.round(Math.random()*sizeAsNumber)}px`  ,//'50px',
             background: `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
         }
         })

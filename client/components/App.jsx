@@ -10,15 +10,23 @@ const App = () => {
   const randomHexColor = () =>
   `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
 
-  for(let i = 0; i< 400; i++){
-    anArray.push(i);
-  }
+
+  //anArray = Array.from({length: 1000}, () => (<Pixel color={randomHexColor()}/>))
+  anArray = Array.from({length: 1000})
+  let pixels = anArray.map(()=> (<Pixel color={randomHexColor()}/>))
+
+  console.log(anArray)
+  console.log(pixels)
 
 
+  //for(let i =0; i< 1000 ; i++){
+  //   anArray.push(i)
+  // }
+  //{anArray.map(()=> (<Pixel color={randomHexColor()}/>)  ) }
   return (
     <div>
 
-      {anArray.map(()=> (<Pixel color={randomHexColor()}/>)  ) }
+      {pixels}
     </div>
   )
 }
